@@ -1,0 +1,81 @@
+
+
+<div class="section" fxLayout="column" fxLayoutAlign="center" fxLayout.sm="column">
+  <div class="form" fxLayout.xs="column">
+    <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayout.sm="column">
+      <div class="heading" fxHide.xs>
+        <span class="f">F</span>
+        <span class="u">u</span>
+        <span class="n">n</span>
+        <span class="d">d</span>
+        <span class="o">o</span>
+        <span class="oo">o</span>
+      </div>
+
+      <div class="title">
+        <p>Sign in</p>
+
+      </div>
+      <div class="title1">
+        <p>Use your Fundoo Account</p>
+
+      </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+      <div class="emailorphone">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email or phone</mat-label>
+          <input type="text" formControlName="email" matInput placeholder="Email or phone">
+          <mat-error>Enter an email or phone number</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <div class="forgotemailbutton">
+        <button class="button">Forgot email?</button>
+
+      </div>
+
+      <div class="password">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" formControlName="password" matInput placeholder="Password">
+          <mat-error>Enter a password</mat-error>
+        </mat-form-field>
+
+        <div class="forgotPasswordbutton">
+          <button class="buttonP">Forgot password?</button>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="paragraph">
+        <p>Not your computer? Use Guest mode to sign in privately.</p>
+
+      </div>
+
+      <div class="learnmorebutton">
+        <button class="button2">Learn more</button>
+
+      </div>
+
+      <div class="createaccountandnextbutton">
+        <button class="button3">Create account
+
+        </button>
+
+        <button fxLayout.xs="row" class="button4">Next</button>
+
+      </div>
+    </form>
+
+    <!-- </div> -->
+
+  </div>
+</div>

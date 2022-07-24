@@ -1,0 +1,44 @@
+<div class="section">
+    <div class="form">
+        <div fxLayout="column" fxLayoutAlign="space-evenly center">
+
+            <div class="heading">
+                <span class="f">F</span>
+                <span class="u">u</span>
+                <span class="n">n</span>
+                <span class="d">d</span>
+                <span class="o">o</span>
+                <span class="oo">o</span>
+
+            </div>
+
+            <div class="title">
+                <p>Find your email</p>
+
+            </div>
+            <div class="title1">
+                <p>Enter your phone number or recovery email</p>
+
+            </div>
+
+
+            <form [formGroup]="forgotemailForm" (ngSubmit)="onSubmit()">
+                <div class="Phoneoremail">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Phone number or email</mat-label>
+                        <input type="text" formControlName="phoneOrEmail" matInput placeholder="Phone number or email">
+                        <mat-error>Enter a valid email or phone number</mat-error>
+                    </mat-form-field>
+
+                </div>
+
+                <div class="nextbutton">
+                    <button class="button4">Next</button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

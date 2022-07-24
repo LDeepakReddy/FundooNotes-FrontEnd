@@ -1,0 +1,106 @@
+<div class="section">
+
+
+  <div class="form">
+
+
+    <div fxLayout="row" fxLayoutAlign="space-evenly center" fxFlex="100">
+
+      <div class="heading" fxLayout="row" fxLayoutAlign="right" fxFlex.xs="100">
+        <span class="f">F</span>
+        <span class="u">u</span>
+        <span class="n">n</span>
+        <span class="d">d</span>
+        <span class="o">o</span>
+        <span class="oo">o</span>
+
+      </div>
+
+
+      <div class="title">
+        <p>Create your Fundoo Account</p>
+      </div>
+
+      <form [formGroup]="registerForm">
+        <div class="firstandlastname">
+
+          <mat-form-field appearance="outline">
+            <mat-label>First name</mat-label>
+            <input type="text" formControlName="firstName" matInput placeholder="First name">
+            <mat-error>Enter first name</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input type="text" formControlName="lastName" matInput placeholder="Last name">
+            <mat-error>Enter last name</mat-error>
+
+          </mat-form-field>
+        </div>
+
+        <div class="username">
+
+          <mat-form-field style="width: 97%;" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input type="text" formControlName="userName" matInput placeholder="user name">
+            <mat-error>Choose a Gmail address</mat-error>
+            <mat-hint>You can use letters,numbers & periods</mat-hint>
+          </mat-form-field>
+
+        </div>
+
+        <div class="emailbutton">
+          <button class="button">Use my current e-mail address instead</button>
+
+        </div>
+        <div class="passwordandconfirm">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" formControlName="password"  matInput placeholder="Password">
+
+            <!-- <input [type]=" showPassword ? 'text' : 'password' " formControlName="password" matInput
+              placeholder="Password"> -->
+
+            <mat-error>Enter a password</mat-error>
+
+            <mat-hint>Use 8 or more characters with a mix of letters, numbers &symbols</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm</mat-label>
+            <input type="password" formControlName="confirm" matInput placeholder="confirm">
+            <!-- <input [type]=" showPassword ? 'text' : 'password' " formControlName="password" matInput
+              placeholder=" confirm Password"> -->
+          </mat-form-field>
+
+        </div>
+
+        <div class="checkbox">
+          <mat-checkbox class="example-margin">Show password</mat-checkbox>
+          <!-- <mat-checkbox class="example-margin" (click)='showHidePassword()'>Show password</mat-checkbox> -->
+        </div>
+
+        <div class="signinandnextbutton">
+          <button class="button1">Sign in instead</button>
+
+          <button class="button2" (click)="onSubmit()">Next</button>
+
+
+        </div>
+
+      </form>
+    </div>
+
+    <div class="rightdiv">
+      <div class="imageandpara">
+
+        <img class="image" src="../../../assets/account.svg" alt="">
+        <p class="para">One account. All of Fundoo<br>working for you .</p>
+
+
+      </div>
+
+    </div>
+
+  </div>

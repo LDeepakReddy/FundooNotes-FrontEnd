@@ -1,0 +1,167 @@
+.section{
+    // border: 2px solid rebeccapurple;
+    width: 100%;
+    height: 100%;
+   
+}
+.form{
+    border: 1px solid rgb(110, 108, 108);
+    display: flex;
+   
+    // justify-content: center;
+    width: 30%;
+    height: 73%;
+    position: relative;
+    left: 36%;
+    top: 5%;
+    border-radius: 10px;
+    // opacity: 0.5;
+    
+}
+
+
+.heading{
+    // border: 2px solid red;
+    line-height: 1;  
+    height: 10%;
+    width: 20%;
+    text-align: center;
+    display: flex;
+    position: relative;
+    left: 45%;
+    top: 0%;
+    padding-top: 15%;
+    padding-bottom: 1%;
+    font-family   : 'Google Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
+    font-size     : 20px;
+    font-weight   : 400;
+}
+.f{
+    color:blue;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center
+  }
+  .u{
+    color: red ;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center
+    
+  }
+  .n{
+    color: yellow;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center
+  
+  }
+  .d{
+    color: blue;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center
+  
+  }
+  .o{
+    color: green;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center
+  
+  }
+  .oo{
+    color: red ;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center
+  }
+
+  .title{
+   
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    left: 35%;
+    top: -3%;
+    width: 80%;
+    color: #202124;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.3333;
+    
+}
+
+.title1{
+    // border: 2px solid yellow;
+    color: #202124;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 3%;
+    letter-spacing: 0.1px;
+    line-height: 1;
+    text-align: center;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    position: relative;
+    left: 16%;
+    top: -7%;
+}
+
+.Phoneoremail{
+    //   border: 2px solid pink;
+    position: relative;
+    top: -20%;
+    left: 10%;
+    width: 100%;
+    // height: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    height: 35px;
+    margin: 2px;
+    border-radius: 15px;
+    margin-top: 2%;
+
+
+}
+
+.mat-form-field{
+    width: 125%;
+}
+
+.nextbutton{
+    // border: 2px solid black;
+    position: relative;
+    left: 45%;
+    width: 100%;
+    // height: 5%;
+    top: -20%;
+    font-size: 14px;
+    height: 20px;
+    padding: 20px 15px;
+    margin: 2px;
+    margin-top: 15%;
+
+}
+
+.button4{
+    // border: 2px solid red;
+    position: relative;
+    left: 26%;
+    // background-color: blue;
+    background-color: var(--gm-colortextbutton-ink-color,#1a73e8);
+    color: white;
+    border-radius: 6px;
+    width: 40%;
+    height: 180%;
+    font-size: .875rem;
+    letter-spacing: .0107142857em;
+    font-weight: 500;
+    text-transform: none;
+    cursor: pointer;
+    border: none;
+
+}
