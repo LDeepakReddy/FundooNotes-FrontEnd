@@ -1,0 +1,116 @@
+<!-- <div class="section" [class.section]="mobileQuery.matches"> -->
+<!-- <div class="container"   fxFlex=100> -->
+<div class="form">
+    <mat-toolbar>
+
+        <div class="menubutton" (click)="snavToggle()" style="margin-right: 20px">
+            <!-- <button>
+                    <img style="border: none" class="menu" src="../../assets/menu_black_24dp.svg" alt="">
+                </button> -->
+            <button style="border: none;">
+                <img style="border: none" class="menu" src="../../assets/menu_black_24dp.svg" alt="">
+            </button>
+
+        </div>
+
+        <!-- <div class="keepimageandbutton"> -->
+        <img class="keepimg" src="../../../assets/keep_2020q4_48dp.png" alt="">
+        <h1 style="display: inline-block;font-family: 'Product Sans',Arial,sans-serif;font-size: 15px;color: #5f6368;opacity: 1;
+        ">Fundoo</h1>
+        <span class="example-spacer"></span>
+
+        <!-- </div> -->
+
+        <div class="Searchbar">
+            <img style="margin-left: 10px; height: 30px;" src="../../assets/search_black_24dp.svg">
+            <input class="inputSearchbox" type="text" placeholder="Search">
+
+        </div>
+
+        <div class="toolBar">
+            <button class="toolbarButton" style="margin-left: 45px">
+                <img src="../../../assets/refresh_black_24dp.svg" alt="">
+
+            </button>
+            <span class="example-spacer"></span>
+
+            <button class="toolbarButton" style="margin-right: 10px">
+                <img src="../../assets/view_agenda_black_24dp.svg" alt="">
+            </button>
+            <span class="example-spacer"></span>
+
+            <button class="toolbarButton" style="margin-right: 10px">
+                <img src="../../../assets/settings_black_24dp.svg" alt="">
+            </button>
+            <span class="example-spacer"></span>
+        </div>
+        <div class="appAndAccount">
+            <button class="toolbarButton" style="margin-right: 22px">
+                <img src="../../assets/apps_black_24dp.svg" alt="">
+            </button>
+            <span class="example-spacer"></span>
+
+
+            <button class="toolbarButton">
+                <img src="../../../assets/account_circle_black_24dp.svg" alt="">
+            </button>
+
+        </div>
+    </mat-toolbar>
+
+
+
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav mode="side" id="sidenav" [class.menu-open]="!isMenuOpen" [class.menu-close]="isMenuOpen" opened
+            #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <div class="container">
+                <mat-nav-list>
+                    <div class="iconsandlist">
+                        <button mat-button class="sidenav-button">
+                            <img class="sidenav-img" src="../../../assets/lightbulb_black_24dp.svg" alt="">
+                            Notes
+                        </button>
+                    </div>
+                    <div class="iconsandlist">
+                        <button mat-button class="sidenav-button">
+                            <img class="sidenav-img" src="../../../assets/notifications_black_24dp.svg" alt="">
+                            Reminders
+                        </button>
+                    </div>
+                    <div class="iconsandlist">
+                        <button mat-button class="sidenav-button">
+                            <img class="sidenav-img" src="../../assets/mode_edit_black_24dp.svg" alt="">
+                            Edit labels
+                        </button>
+                    </div>
+                    <div class="iconsandlist">
+                        <button mat-button class="sidenav-button">
+                            <img class="sidenav-img" src="../../../assets/archive_black_24dp.svg" alt="">
+                            Archives
+                        </button>
+                    </div>
+                    <div class="iconsandlist">
+                        <button mat-button class="sidenav-button">
+                            <img class="sidenav-img" src="../../../assets/delete_black_24dp.svg" alt="">
+                            Trash
+                        </button>
+                    </div>
+
+
+                </mat-nav-list>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+
+
+    <!-- </div> -->
+</div>
+
+<!-- </div> -->

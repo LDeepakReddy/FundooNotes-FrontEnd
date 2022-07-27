@@ -1,0 +1,177 @@
+.section {
+  background-color: white;
+
+}
+
+.form {
+  background-color: white;
+  font-weight: bolder;
+}
+
+.mat-toolbar {
+  background-color: white;
+  // border: 2px solid black;
+  border: 1px solid #c6c9c9;
+
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: row;
+  margin-right: 200px;
+
+  margin-top: 50px;
+  background-color: transparent;
+  border-radius: 10px;
+  border-top: 10px;
+
+  mat-card-title {
+    font-size: 16px;
+
+
+  }
+
+}
+
+.menubutton {
+  border-width: 0px;
+  background-color: white;
+  opacity: 0.5;
+  margin: 0%;
+  border-radius: 0%;
+  margin-left: 1px;
+
+
+}
+
+.menu {
+  border: none;
+  background-color: transparent;
+
+}
+
+.keepimg {
+  cursor: pointer;
+  color: rgb(136, 105, 105);
+
+}
+
+.Searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  padding-top: 5px;
+
+  background: #f1f3f4;
+  // border: none;
+  border: 1px solid transparent;
+  width: 800px;
+  border-radius: 10px;
+  opacity: 0.6;
+
+
+  .inputSearchbox {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 100%;
+  }
+
+  height: 30px;
+  color: #5f6368;
+  margin-left: 80px;
+
+}
+
+
+.appAndAccount {
+  padding-left: 5%;
+  opacity: 0.6;
+}
+
+.toolBar {
+  justify-content: space-around;
+  opacity: 0.6;
+  gap: 10%;
+  row-gap: 15;
+}
+
+.toolbarButton {
+  border: none;
+  background-color: transparent;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+
+}
+
+
+
+.mat-sidenav-container {
+  border: none;
+  height: 88vh;
+  background: #fff;
+}
+
+#sidenav.menu-close {
+  height: 100vh;
+  width: 60px;
+  margin-left: 1em;
+  font-weight: bolder;
+
+}
+
+#sidenav.menu-open {
+  margin-left: 1em;
+  width: 240px;
+
+}
+
+.container {
+  border: none;
+  border-top: 70px;
+  margin-top: 2px;
+  margin-left: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidenav-button:focus {
+  background-color: goldenrod;
+  // border:1px solid red;
+  // margin-top: 1px;
+  border-top-right-radius: 30vh;
+  border-bottom-right-radius: 30vh;
+  width: 240px;
+  padding-top: 6px;
+  // padding-right: 10%;
+  // justify-content: start;
+}
+
+.sidenav-button {
+  opacity: 0.6;
+  border-top-right-radius: 30vh;
+  border-bottom-right-radius: 30vh;
+  width: 240px;
+  height: 50px;
+  text-align: center;
+  padding-top: 6px;
+  display: inline-flex;
+  font-weight: bolder;
+  color: black 10px;
+  border: transparent;
+  background-color: white;
+
+}
+
+mat-nav-list {
+  // border: 2px solid black;
+  margin-left: -22px;
+}
+
+.sidenav-img {
+  margin-right: 50px;
+
+}

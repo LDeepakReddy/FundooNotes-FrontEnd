@@ -7,6 +7,11 @@ import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -16,6 +21,11 @@ import { LoginComponent } from './Components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotEmailComponent } from './Components/forgot-email/forgot-email.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
+import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
+import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
+import { IconsComponent } from './Components/icons/icons.component';
 
 
 @NgModule({
@@ -24,7 +34,12 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     RegistrationComponent,
     LoginComponent,
     ForgotEmailComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent,
+    CreatenotesComponent,
+    GetallnotesComponent,
+    DisplaynotesComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +49,13 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
     MatInputModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    HttpClientModule
-    // MatCardModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
+    MatCardModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

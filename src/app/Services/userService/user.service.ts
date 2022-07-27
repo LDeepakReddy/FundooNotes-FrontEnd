@@ -6,8 +6,10 @@ import { HttpService } from '../httpService/http.service';
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor(private httpService : HttpService) { }
+token:any;
+  constructor(private httpService : HttpService) {
+    this.token=localStorage.getItem("token");
+   }
 
   registration(reqData:any){
     console.log(reqData);
@@ -44,7 +46,7 @@ export class UserService {
   return this.httpService.postService('/forgotPassword',reqData,true,header)
 
   }
-  reset(reqData:any){
+  reset(reqData:any,token:any){
     console.log(reqData);
     let header = {
     headers:new HttpHeaders({
