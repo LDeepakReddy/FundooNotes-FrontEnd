@@ -36,6 +36,7 @@ export class ResetPasswordComponent implements OnInit {
     if (this.resetpasswordForm.valid) {
 
       let reqData = {
+        token:this.token,
         new_password: this.resetpasswordForm.value.newpassword,
         password_confirmation: this.resetpasswordForm.value.confirmPassword
       }

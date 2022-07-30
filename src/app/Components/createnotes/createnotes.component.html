@@ -1,24 +1,55 @@
-<mat-card class="take-note" fxFlex="noshrink">
-    <div  fxLayout="row" fxLayoutAlign="space-between center">
-      <mat-card-title>
-        <input matInput placeholder="Title">
-      </mat-card-title>
-      <button> <img
-        src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg" width="20px" height="20px"></button>
-      
-   </div>
-    <div  fxLayout="row" fxLayoutAlign="space-between center">
-      <input class="description" matInput placeholder="Take a note..."  style="width: 400px;"
-        >
-      <div  fxLayoutAlign="space-between center" fxFlex="noshrink">
-        <button > <img src="" width="24px"
-            height="24px"></button>
-        
-      </div>
-    </div>
+<div fxLayoutAlign="center center" class="container" fxLayoutGap="40px" fxFlex.sm fxFlex.xs>
+    <form [formGroup]="createnoteForm" (ngSubmit)="onSubmit()">
 
-    <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
-      
-      <button mat-flat-button matTooltip="Create Note">Close</button>
-    </mat-card-actions>
-  </mat-card>
+        <div>
+
+            <mat-card class="matcard-1" *ngIf="!show" (click)="onOpen()" style="height:15px;" fxLayout="row" Flex.sm>
+                <div class="takenote" style="margin-left: 5px; padding-right:10px; " fxLayout="column ">
+                    <input style="align-content: center;" placeholder="Take a note.." type="text"
+                        style="border:none; outline:none;" class="titlebar" />
+
+                    <button class="iconbutton" style="border: none; margin-left: 175px; margin-right: 10px;"><img
+                            class="takenoteicons"
+                            src='../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg'></button>
+                    <button style="border: none; margin-right: 10px"><img class="takenoteicons"
+                            src='../../../assets/brush_FILL0_wght400_GRAD0_opsz48.svg'></button>
+                    <button style="border: none; margin-right: 10px"><img class="takenoteicons"
+                            src='../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg'></button>
+                </div>
+            </mat-card>
+        </div>
+        <mat-card class="matcard-2" *ngIf="show" Flex.sm fxFlex.xs>
+
+            <div fxLayout="row" fxLayoutAlign="space-between stretch">
+                <div fxLayout="column" fxLayoutAlign="space-between start">
+                    <div>
+                        <textarea class="titlebar-2" placeholder="Title" formControlName="title"
+                            style="border:none; outline:none;"></textarea>
+                        <button class="pinbutton" style="border: none"><img class="takenotepin"
+                                src='../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg'></button>
+                    </div>
+
+                    <textarea class="textarea" placeholder="Take a note..." formControlName="description"
+                        style="border:none;padding-bottom: 20px;"></textarea>
+                </div>
+            </div>
+            <div class="iconandclose">
+                <div>
+                    <mat-card-actions>
+                        <app-icons> </app-icons>
+                    </mat-card-actions>
+                </div>
+
+                <div class="closebutton" fxLayout="row">
+                    <mat-card-actions>
+                        <button class="close" mat-button (click)="onSubmit()">Close</button>
+                    </mat-card-actions>
+                </div>
+
+
+            </div>
+
+        </mat-card>
+
+    </form>
+</div>

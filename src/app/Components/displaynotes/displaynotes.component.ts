@@ -12,4 +12,9 @@ export class DisplaynotesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+   
+ 
+ 
+
 }
