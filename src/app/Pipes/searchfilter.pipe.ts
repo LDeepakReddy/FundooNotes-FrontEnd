@@ -5,17 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchfilterPipe implements PipeTransform {
 
-  transform(value: any,filteredString:string) {
-    if(value.length === 0){
+  transform(value: any, args?: any): any {
+
+    if (!args) {
       return value;
+    } else {
+      args = args.toLocaleLowerCase();
     }
-    const searchnotes =[];
-    for(const searchnote of value){
-      if(searchnote['title'] === filteredString || searchnote['description'] ===filteredString){
-        searchnotes.push(searchnote);
-      }
-    }
-    return searchnotes;
+    return value.filter((note: any) => {
+      return note.title.toLocaleLowerCase().includes(args) | note.description.toLocaleLowerCase().includes(args);
+
+    })
   }
 
 }

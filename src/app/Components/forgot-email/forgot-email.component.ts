@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/userService/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-forgot-email',
@@ -11,7 +12,7 @@ export class ForgotEmailComponent implements OnInit {
   forgotemailForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService,private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.forgotemailForm =this.formBuilder.group({
@@ -28,6 +29,11 @@ export class ForgotEmailComponent implements OnInit {
       }
       this.user.forgot(reqData).subscribe((response: any) => {
         console.log(response);
+        this.snackBar.open('reset link sent to your mail', '', {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition:'left'
+        })
 
       }, (error: any) => {
         console.log(error);

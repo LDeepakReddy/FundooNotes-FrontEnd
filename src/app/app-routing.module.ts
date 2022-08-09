@@ -7,6 +7,9 @@ import { ResetPasswordComponent } from './Components/reset-password/reset-passwo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GetallnotesComponent } from './Components/getallnotes/getallnotes.component';
 import { IconsComponent } from './Components/icons/icons.component';
+import { UpdateComponent } from './Components/update/update.component';
+import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.component';
+import { TrashnotesComponent } from './Components/trashnotes/trashnotes.component';
 
 const routes: Routes = [
   { path:'', redirectTo:"/login", pathMatch:'full' },
@@ -18,10 +21,13 @@ const routes: Routes = [
 
   children:[
     { path:'', redirectTo:"/dashboard/getallnotes", pathMatch:'full' },
-    { path:'getallnotes',component:GetallnotesComponent}    
+    { path:'getallnotes',component:GetallnotesComponent},
+    { path:'archiveNotes',component:ArchivenotesComponent},  
+    { path:'trash',component:TrashnotesComponent},
   
    ]},
    { path:'icons',component:IconsComponent},
+   { path:'update',component:UpdateComponent}
 ];
 
 

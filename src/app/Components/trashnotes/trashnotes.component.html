@@ -1,0 +1,8 @@
+<div style="margin-left: 400px;margin-top:25px;">
+    <h4 style="font-style: italic;">Notes in Trash are deleted after 7 days.</h4>
+  
+</div>
+
+<div style="margin-left: 200px;margin-top: 50px;">
+    <app-displaynotes [notesArraylist]="trashNotes" (messageDisplaytoGetAllnotes)="receivemessageDisplaytoGetAllnotes($event)"></app-displaynotes>
+</div>

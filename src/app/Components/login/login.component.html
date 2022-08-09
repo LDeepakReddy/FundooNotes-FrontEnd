@@ -1,6 +1,7 @@
 <!-- <div class="section" fxFlex.xs="100" fxLayout="column" fxLayoutAlign="center" fxLayout.sm="column"> -->
 <div class="form" fxFlex="33"  fxFlex.xs="100" fxLayout.xs="row">
   <div fxLayout="column"  fxLayoutAlign="space-evenly center" >
+    
     <div class="heading" fxHide.xs>
       <span class="f">F</span>
       <span class="u">u</span>
@@ -14,14 +15,14 @@
       <p>Sign in</p>
 
     </div>
-    <div class="title1">
+    <div class="title1" fxFlex="33"  fxFlex.xs="100">
       <p>Use your Fundoo Account</p>
 
     </div>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
 
-      <div class="emailorphone">
+      <div class="emailorphone" fxFlex="33"  fxFlex.xs="100">
 
         <mat-form-field appearance="outline">
           <mat-label>Email or phone</mat-label>
@@ -31,12 +32,12 @@
 
       </div>
 
-      <div class="forgotemailbutton">
-        <button class="button">Forgot email?</button>
+      <div class="forgotemailbutton" fxFlex="33"  fxFlex.xs="100">
+        <button class="button" routerLink="/forgot-email" >Forgot email?</button>
 
       </div>
 
-      <div class="password">
+      <div class="password" fxFlex="33"  fxFlex.xs="100">
 
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
@@ -44,7 +45,7 @@
           <mat-error>Enter a password</mat-error>
         </mat-form-field>
 
-        <div class="forgotPasswordbutton">
+        <div class="forgotPasswordbutton" fxFlex="33"  fxFlex.xs="100">
           <button class="buttonP">Forgot password?</button>
 
         </div>
@@ -53,22 +54,24 @@
 
       </div>
 
-      <div class="paragraph">
+      <div class="paragraph" fxFlex="33"  fxFlex.xs="100">
         <p>Not your computer? Use Guest mode to sign in privately.</p>
 
       </div>
 
-      <div class="learnmorebutton">
+      <div class="learnmorebutton" fxFlex="33"  fxFlex.xs="100">
         <button class="button2">Learn more</button>
 
       </div>
 
-      <div class="createaccountandnextbutton">
-        <button class="button3">Create account
+      <div class="createaccountandnextbutton"fxFlex="33"  fxFlex.xs="100">
+        <button class="button3" routerLink="/registration">Create account
 
         </button>
 
+        <!-- <button fxLayout.xs="row" class="button4"routerLink="/dashboard">Next</button> -->
         <button fxLayout.xs="row" class="button4">Next</button>
+       
 
       </div>
     </form>

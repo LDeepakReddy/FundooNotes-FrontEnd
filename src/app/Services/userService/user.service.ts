@@ -6,59 +6,59 @@ import { HttpService } from '../httpService/http.service';
   providedIn: 'root'
 })
 export class UserService {
-token:any;
-  constructor(private httpService : HttpService) {
-    this.token=localStorage.getItem("token");
-   }
+  token: any;
+  constructor(private httpService: HttpService) {
+    this.token = localStorage.getItem("token");
+  }
 
-  registration(reqData:any){
+  registration(reqData: any) {
     console.log(reqData);
     let header = {
-    headers:new HttpHeaders({
-      'Content-type' : 'application/json',
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
 
-    })
+      })
+    }
+    return this.httpService.postService('/register', reqData, false, header)
+
   }
-  return this.httpService.postService('/register',reqData,false,header)
 
-  }
-
-  login(reqData:any){
+  login(reqData: any) {
     console.log(reqData);
     let header = {
-    headers:new HttpHeaders({
-      'Content-type' : 'application/json',
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
 
-    })
+      })
+    }
+    return this.httpService.postService('/login', reqData, true, header)
+
   }
-  return this.httpService.postService('/login',reqData,true,header)
 
-  }
-
-  forgot(reqData:any){
+  forgot(reqData: any) {
     console.log(reqData);
     let header = {
-    headers:new HttpHeaders({
-      'Content-type' : 'application/json',
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
 
-    })
-  }
-  return this.httpService.postService('/forgotPassword',reqData,true,header)
+      })
+    }
+    return this.httpService.postService('/forgotPassword', reqData, true, header)
 
   }
-  reset(reqData:any,token:any){
+  reset(reqData: any, token: any) {
     console.log(reqData);
     let header = {
-    headers:new HttpHeaders({
-      'Content-type' : 'application/json',
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
 
-    })
+      })
+    }
+    return this.httpService.postService('/resetPassword', reqData, true, header)
+
   }
-  return this.httpService.postService('/resetPassword',reqData,true,header)
 
-  }
 
-  
 
-  
+
 }

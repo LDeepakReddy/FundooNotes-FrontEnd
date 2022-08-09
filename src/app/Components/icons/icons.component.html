@@ -1,10 +1,55 @@
-<div icons>
+<div icons *ngIf="!isTrashComponent">
     <img class="icon" src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
     <img class="icon" src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
-    <img class="icon" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
+    <img [matMenuTriggerFor]="colour" class="icon" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
+    <mat-menu #colour="matMenu" class="colourmenu" style="display: inline-block;">
+
+        <!-- <div *ngFor='let color of colors' (click)="setColor(color)"> -->
+
+        <div *ngFor="let color of colors" class="colorButton" >
+            <button mat-mini-fab [style.background]="color?.name"  (click)="setColor(color.name)"></button>
+        </div>
+
+        <!-- </div> -->
+
+    </mat-menu>
+
     <img class="icon" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
-    <img class="icon" src="../../../assets/archive_black_24dp.svg">
-    <img class="icon" src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
+
+    <img class="icon" *ngIf="!isArchieveComponent" (click)="Archivenote()" src="../../../assets/archive_black_24dp.svg">
+
+
+    <img *ngIf="isArchieveComponent" class="icon" matTooltip="Unarchive" (click)="unArchivenote()"
+        src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg">
+    <img [matMenuTriggerFor]="menu" class="icon" style="height: 20px;"
+        src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
+
+</div>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onDelete()">Delete note</button>
+    <button mat-menu-item>Add drawing</button>
+    <button mat-menu-item>Make a copy</button>
+    <button mat-menu-item>Show checkboxes</button>
+    <button mat-menu-item>Copy to google Docs</button>
+</mat-menu>
+
+
+<div *ngIf="isTrashComponent" style="height:20px; width: auto; border-radius: 50px;">
+
+    <img class="icon" (click)="deleteForever()" style="margin-left: 20px; "
+        src="../../../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg">
+
+
+
+    <img class="icon" matTooltip="Restore" (click)="restore()" style="margin-left: 20px; "
+        src="../../../assets/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg">
 
 
 </div>
+<!-- <div *ngIf="isArchieveComponent">
+   
+        <img class="icon" matTooltip="Unarchive" (click)="unArchivenote()" 
+        src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg"> 
+    
+</div> -->

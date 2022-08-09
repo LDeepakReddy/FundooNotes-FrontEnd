@@ -1,4 +1,5 @@
-<app-createnotes></app-createnotes>
-<div>
-    <app-displaynotes> </app-displaynotes>
+<app-createnotes (messageEvent)="receiveMessage($event)"></app-createnotes>
+<div class="display">
+    <app-displaynotes (messageDisplaytoGetAllnotes)="receivemessageDisplaytoGetAllnotes($event)" [notesArraylist]="notelist"></app-displaynotes>
 </div>
+    

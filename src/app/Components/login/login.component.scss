@@ -285,7 +285,7 @@
     // height: 5%;
     top: -15%;
     font-size: 14px;
-    padding-top: 5%;
+    padding-top: 20px;
 
     height: 20px;
     padding: 6px 8px;
@@ -300,13 +300,15 @@
     font-family: "Google Sans", Roboto, Arial, sans-serif;
     background-color: transparent;
     position: relative;
-    right: 3%;
+    right: 6%;
+    // bottom: 30px;
     font-size: .875rem;
     letter-spacing: .0107142857em;
     font-weight: 500;
     text-transform: none;
     cursor: pointer;
     border: none;
+    
 
 
 }
@@ -315,7 +317,7 @@
     // border: 2px solid red;
     position: relative;
     left: 45%;
-    bottom: 25%;
+    // bottom: 35px;
     // background-color: blue;
     background-color: var(--gm-colortextbutton-ink-color, #1a73e8);
     color: white;

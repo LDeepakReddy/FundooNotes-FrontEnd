@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/userService/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,8 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService, private router: Router,
+    private snackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -29,20 +32,26 @@ export class LoginComponent implements OnInit {
       }
       this.user.login(reqData).subscribe((response: any) => {
         console.log(response);
-         localStorage.setItem("token",response.token);
+        localStorage.setItem("token", response.token);
+        this.router.navigateByUrl("/dashboard/getallnotes");
+        this.snackBar.open('Login successful..', '', {
+          duration: 2000,
+          verticalPosition: 'bottom',
+          horizontalPosition:'left'
+        })
 
       }, (error: any) => {
         console.log(error);
+        this.snackBar.open('Please enter valid credentials', '', {
+          duration: 2000,
+          verticalPosition: 'bottom',
+          horizontalPosition:'left'
+
+        });
       }
       );
 
 
-      // stop here if form is invalid
-      // if (this.loginForm.invalid) {
-      //   return;
-      // }
-
-      // console.log(this.loginForm.value)
     }
 
   }

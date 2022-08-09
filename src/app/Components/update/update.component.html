@@ -1,0 +1,19 @@
+
+<mat-card >
+    <mat-card-title >
+        <input class="title" matInput type="text" [(ngModel)]="title" />
+
+        <button class="pinbutton">
+            <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+        </button>
+    </mat-card-title>
+
+    <mat-card-subtitle>
+        <input class="title" matInput type="text"  [(ngModel)]="description" />
+    </mat-card-subtitle>
+
+    <mat-card-content fxlayout="row" fxLayoutAlign="space-between center" fxLayout.xs="row">
+        <app-icons> </app-icons>
+        <button class="close" mat-stroked-button (click)="Updatenotes()">close</button>
+    </mat-card-content>
+</mat-card>
