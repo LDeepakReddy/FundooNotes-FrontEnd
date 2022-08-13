@@ -16,7 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -37,6 +37,8 @@ import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.co
 import {AuthenticationService} from './Services/AuthService/authentication.service'
 import { TrashnotesComponent } from './Components/trashnotes/trashnotes.component';
 import { SearchfilterPipe } from './Pipes/searchfilter.pipe';
+import { CreatelabelComponent } from './Components/createlabel/createlabel.component';
+import { GetlabelsComponent } from './Components/getlabels/getlabels.component';
 
 
 
@@ -56,6 +58,8 @@ import { SearchfilterPipe } from './Pipes/searchfilter.pipe';
     ArchivenotesComponent,
     TrashnotesComponent,
     SearchfilterPipe,
+    CreatelabelComponent,
+    GetlabelsComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { IconsComponent } from './Components/icons/icons.component';
 import { UpdateComponent } from './Components/update/update.component';
 import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.component';
 import { TrashnotesComponent } from './Components/trashnotes/trashnotes.component';
+import { CreatelabelComponent } from './Components/createlabel/createlabel.component';
 
 const routes: Routes = [
   { path:'', redirectTo:"/login", pathMatch:'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent},
   { path: 'resetPassword/:token', component: ResetPasswordComponent},
   {path: 'forgot-email', component:ForgotEmailComponent},
+ 
   {path: 'dashboard', component:DashboardComponent,
 
   children:[
@@ -24,6 +26,8 @@ const routes: Routes = [
     { path:'getallnotes',component:GetallnotesComponent},
     { path:'archiveNotes',component:ArchivenotesComponent},  
     { path:'trash',component:TrashnotesComponent},
+    // {path: 'labels',component:CreatelabelComponent},
+    
   
    ]},
    { path:'icons',component:IconsComponent},

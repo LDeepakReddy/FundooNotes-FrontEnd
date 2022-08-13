@@ -1,17 +1,15 @@
 <div icons *ngIf="!isTrashComponent">
     <img class="icon" src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
     <img class="icon" src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
-    <img [matMenuTriggerFor]="colour" class="icon" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
-    <mat-menu #colour="matMenu" class="colourmenu" style="display: inline-block;">
+    <img [matMenuTriggerFor]="color" *ngIf="!isTrashComponent" class="icon" src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
 
-        <!-- <div *ngFor='let color of colors' (click)="setColor(color)"> -->
-
-        <div *ngFor="let color of colors" class="colorButton" >
-            <button mat-mini-fab [style.background]="color?.name"  (click)="setColor(color.name)"></button>
+    <mat-menu #color="matMenu">
+        <div fxLayout="row wrap" style=" width: 180px;">
+            <div *ngFor="let color of colors" class="bg-color">
+                <button [style.background]="color.code"
+                    (click)="setColor(color.code)"></button>
+            </div>
         </div>
-
-        <!-- </div> -->
-
     </mat-menu>
 
     <img class="icon" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
@@ -53,3 +51,10 @@
         src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg"> 
     
 </div> -->
+<mat-menu #colorMenu="matMenu">
+    <div class="color" fxLayoutGap="2px">
+        <div *ngFor="let color of colors" class="backgroundColours">
+            <button mat-mini-fab [style.background]="color?.code" (click)="setColor(color?.code)"></button>
+        </div>
+    </div>
+</mat-menu>

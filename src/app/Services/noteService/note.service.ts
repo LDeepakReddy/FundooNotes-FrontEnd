@@ -129,27 +129,40 @@ export class NoteService {
     return this.httpService.deleteService("/deleteNoteById", true, header)
   }
 
-  ColorNote(id: any, colour: any) {
-    // console.log(id,data.colour)
-    let header = {
-      headers: new HttpHeaders({
-        'Content-type': 'application/json',
-        'Authorization': "Bearer " + this.token
-      })
-    }
-    return this.httpService.postService("/colournote", { id, colour: colour }, true, header)
-  }
+  // ColorNote(id: any, data: any) {
+  //   // console.log(id,data.colour)
+  //   let header = {
+  //     headers: new HttpHeaders({
+  //       'Content-type': 'application/json',
+  //       'Authorization': "Bearer " + this.token
+  //     })
+  //   }
+  //   return this.httpService.putService("/colournote", { id, colour: data.colour }, true, header)
+  // }
 
   
-  changeColor(data: any) {
-    let httpAuthOptions = {
+  // ColorNote(data:any){
+  //   let httpAuthOptions = {
+  //     headers:new HttpHeaders({
+  //       'Content-Type':'application/json',
+  //       'Authorization': "Bearer " + this.token
+  //     })
+  //   };
+    
+    
+  //   return this.httpService.postService("/colournote",data,true, httpAuthOptions);
+  // }
+  ColorNote(data:any){
+   
+    let header={
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.token
+        'Authorization':'Bearer '+this.token
       })
-    };
-    return this.httpService.postService('/colournote', data, true, httpAuthOptions);
+    }
+    return this.httpService.postService("/colournote",data,true, header);
   }
+
 
 
 

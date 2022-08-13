@@ -79,12 +79,35 @@
                             Reminders
                         </button>
                     </div>
-                    <div class="iconsandlist">
+
+                    <div class="iconsandlist" *ngFor="let note of labelList">
+                     
                         <button mat-button class="sidenav-button">
+                            <img class="sidenav-img" src="../../assets/label_black_24dp.svg" alt="">
+                            {{note.label_name}}
+                        </button>
+                        
+                    </div>
+                    <div class="iconsandlist">
+                        <button mat-button class="sidenav-button" (click)="openDialog()">
                             <img class="sidenav-img" src="../../assets/mode_edit_black_24dp.svg" alt="">
-                            Edit labels
+                            Edit lables
                         </button>
                     </div>
+
+                   
+
+                    <!-- <div  class="iconsandlist"  *ngFor="let note of labelList">
+                        <img class="sidenav-img" src="../../assets/label_black_24dp.svg" alt="">
+                       <a mat-list-item {{note.label}}></a>
+                       
+                    </div>
+    
+                      <div class="iconsandlist"  >
+                          <img class="sidenav-img" src="../../assets/" alt="">
+                         
+                          <a mat-list-item (click)="openDialog()" >Edit lables</a>
+                      </div> -->
                     <div class="iconsandlist">
                         <button mat-button class="sidenav-button" (click)="Archive()">
                             <img class="sidenav-img" src="../../../assets/archive_black_24dp.svg" alt="">

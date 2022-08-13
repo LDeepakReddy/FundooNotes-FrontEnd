@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/Services/userService/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class RegistrationComponent implements OnInit {
   showPassword: boolean = false;
 
 
-  constructor(private formBuilder: FormBuilder, private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService,private snackBar: MatSnackBar,
+    private router: Router,) { }
 
   showHidePassword() {
     this.showPassword = !this.showPassword;
@@ -47,6 +50,12 @@ export class RegistrationComponent implements OnInit {
       }
       this.user.registration(reqData).subscribe((response: any) => {
         console.log(response);
+        this.router.navigateByUrl("/login");
+        this.snackBar.open('User Registerd successfully..', '', {
+          duration: 3000,
+          verticalPosition: 'bottom',
+          horizontalPosition: 'left'
+        })
 
       }, (error: any) => {
         console.log(error);

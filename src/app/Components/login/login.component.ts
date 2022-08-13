@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         this.snackBar.open('Login successful..', '', {
           duration: 2000,
           verticalPosition: 'bottom',
-          horizontalPosition:'left'
+          horizontalPosition: 'left'
         })
 
       }, (error: any) => {
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.snackBar.open('Please enter valid credentials', '', {
           duration: 2000,
           verticalPosition: 'bottom',
-          horizontalPosition:'left'
+          horizontalPosition: 'left'
 
         });
       }

@@ -13,12 +13,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class IconsComponent implements OnInit {
   id: any;
+  colour: any
   @Input() noteObject: any;
   @Output() messageTrashtoDisplay = new EventEmitter<string>();
+  // @Output() color: EventEmitter<any> = new EventEmitter();
 
 
   // colors = ['green', 'red', 'blue', 'yellow', 'grey', 'purple', 'brown',
-  //   'orange', 'pink', 'black', 'silver', 'teal', 'white',];
+  //   'orange', 'pink',  'silver', 'teal', 'white',];
 
   colors: Array<any> = [
     { code: '#ffffff', name: 'white' },
@@ -78,7 +80,7 @@ export class IconsComponent implements OnInit {
 
   deleteForever() {
     this.note.permanentDelete(this.noteObject.id).subscribe((response: any) => {
-      console.log("Note Trashed Successfully", response);
+      console.log("Note Deleted Successfully", response);
       this.messageTrashtoDisplay.emit(response)
       this.snackBar.open('Note deleted successfully!!!', '', {
         duration: 3000,
@@ -140,43 +142,40 @@ export class IconsComponent implements OnInit {
     })
   }
 
-  // setColor(colour: any) {
-  //   console.log(colour)
-  //   this.noteObject.colour = colour
-  //   this.id = this.noteObject.id
-  //   let data = {
-  //     colour: colour
-  //   }
-  //   this.note.ColorNote(this.id, data).subscribe((result: any) => {
-  //     console.log(result);
-  //     this.messageTrashtoDisplay.emit(result)
-
-  //   })
-  // }
-  setColor(color: any) {
-    console.log('color', color);
-    console.log(this.noteObject);
-
-    this.noteObject.color = color;
-    console.log('color', color);
-    let data = {
-      colour: color,
-      id: [this.noteObject.id],
+  setColor(note_colour:any){
+    console.log('Icons ChangeNoteColor Api Calling..')
+    let data={
+      id: this.noteObject.id,
+      colour: note_colour
     }
-    console.log(data);
-    this.note.changeColor(data).subscribe(
-      (response: any) => {
-        // this.color.emit()
-        console.log('Response of setColour', response);
-        this.messageTrashtoDisplay.emit(response)
-      },
-      (error: any) => {
-        console.log('archive Error at icons methods', error);
-
-      }
-    );
-    
+    console.log(data)
+    this.note.ColorNote(data).subscribe((res:any)=>{
+      console.log(res);
+    })
+    this.snackBar.open('Note color changed','',{
+      duration:2000,
+    });
   }
+  // setColor(color: any){
+  //   this.noteObject.color = color;
+  //   console.log('color',color);
+  //   let data = {
+  //     colour: color,
+  //     id: [this.noteObject.id],
+  //   }
+  //   console.log(data);
+  //   this.note.ColorNote(data).subscribe(
+  //     (response:any)=>{ 
+  //       console.log('Response of setColour',response);
+  //       this.snackBar.open('Change the color successfully','',{duration:2000,})
+  //     },
+  //     (error:any) => {
+  //       this.snackBar.open('Color not change','try Again',{duration:2000,})
+  //     }
+  //     );
+  //  }
+
+
 
 
 }

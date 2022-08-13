@@ -1,0 +1,51 @@
+<div class="matcard2">
+    Edit labels
+    <br>
+    <br>
+
+    <div class="input" fxLayout="row" fxLaytoutGap="20px">
+        <div>
+            <button class="cancelbtn" *ngIf="show" (click)="onOpen()" mat-icon-button color="" aria-label="">
+                <img id="button" src="../../../assets/add_FILL0_wght400_GRAD0_opsz48.svg">
+            </button>
+    
+            <button class="button"  *ngIf="!show" (click)="onClose()" mat-icon-button color="" aria-label="">
+                <img id="button" src="../../../assets/close_FILL0_wght400_GRAD0_opsz48.svg">
+            </button>
+
+                <input matInput [(ngModel)]="labelname" class="typepart" type="text" placeholder="create new label"
+                    fxLayoutAlign="center center">
+                    <button class="button" *ngIf="!show" (click)="onCreate()" mat-icon-button color="" aria-label="">
+                        <img id="button" src="../../../assets/check_FILL0_wght400_GRAD0_opsz48.svg">
+                    </button>
+           
+        </div>
+        
+
+       
+    </div>
+
+
+    <div class="icons" fxLayoutAlign="row" fxLayoutAlign="center center" *ngFor="let note of labelList">
+
+        <div class="iconsfirst" (mouseover)="cursor=true" (mouseout)="cursor=false">
+            <button *ngIf="!cursor" mat-icon-button> <img id="button" src="../../../assets/label_black_24dp.svg" alt=""></button>
+            <button *ngIf="cursor" (click)="deleteNoteLabel(note)" mat-icon-button>
+                <img id="button" src="../../../assets/delete_black_24dp.svg" alt=""> </button>
+        </div>
+
+        <input style="width:170px;"  matInput type="text" [(ngModel)]="note.label_name" style="border:0px; outline:none;">
+        {{note.labelname}}
+        <div class="iconlast">
+            <button (click)="updateLabel(note)" mat-icon-button><img  id="button" mat-icon-button
+                    src="../../../assets/mode_edit_black_24dp.svg" alt=""></button>
+        </div>
+
+    </div>
+
+</div>
+<br>
+
+<div class="done" fxLayout="column" fxLayoutAlign="end end">
+    <button mat-raised-button mat-dialog-close>Done</button>
+</div>

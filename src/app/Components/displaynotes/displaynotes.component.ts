@@ -28,6 +28,7 @@ export class DisplaynotesComponent implements OnInit {
   @Input() notesArraylist: any;
 
   @Output() messageDisplaytoGetAllnotes = new EventEmitter<string>();
+  @Output() changeColorOfNote = new EventEmitter<any>();
 
 
   constructor(public dialog: MatDialog, private dataService: DataService, private snackbar: MatSnackBar) { }
@@ -66,6 +67,11 @@ export class DisplaynotesComponent implements OnInit {
 
     this.messageDisplaytoGetAllnotes.emit(this.msg)
   }
+
+  colourchanged(event:any){
+    console.log(event);
+    this.changeColorOfNote.emit("color")
+    }
 
 
 
