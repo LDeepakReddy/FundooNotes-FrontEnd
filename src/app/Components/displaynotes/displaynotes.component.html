@@ -1,6 +1,7 @@
 <div class="displayNote">
     <!-- <div *ngFor="let note of notesArraylist" |  searchfilter:filteredString;>  -->
-    <div *ngFor="let note of notesArraylist  | searchfilter : searchString " [style.background]="note.colors">
+    <div *ngFor="let note of notesArraylist  | searchfilter : searchString " >
+        <!-- [style.background]="note.colors" -->
 
         <mat-card class="example-card"  [style.background]="note.colour" >
             <mat-card-title (click)="openDialog(note)" style="font-size: 15px;">

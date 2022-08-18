@@ -35,6 +35,11 @@ export class IconsComponent implements OnInit {
     { code: '#F9A7B0', name: 'pink' },
     { code: '#E2A76F', name: 'brown' },
     { code: '#D3D3D3', name: 'grey' },
+    { code: '#ffff66', name: 'lightyellow' },
+    { code: '#008040', name: 'olive' },
+    { code: '#732626', name: 'dark-maroon' },
+    { code: '#669999', name: 'light-blue' },
+    { code: '#ffa64d', name: 'light-orange' },
   ];
 
   isDisplayNoteComponent = false;
@@ -142,40 +147,21 @@ export class IconsComponent implements OnInit {
     })
   }
 
-  setColor(note_colour:any){
-    console.log('Icons ChangeNoteColor Api Calling..')
-    let data={
+  setColor(note_colour: any) {
+   
+    let data = {
       id: this.noteObject.id,
       colour: note_colour
     }
     console.log(data)
-    this.note.ColorNote(data).subscribe((res:any)=>{
+    this.note.ColorNote(data).subscribe((res: any) => {
       console.log(res);
+      this.messageTrashtoDisplay.emit(res);
     })
-    this.snackBar.open('Note color changed','',{
-      duration:2000,
+    this.snackBar.open('Note color changed', '', {
+      duration: 2000,
     });
   }
-  // setColor(color: any){
-  //   this.noteObject.color = color;
-  //   console.log('color',color);
-  //   let data = {
-  //     colour: color,
-  //     id: [this.noteObject.id],
-  //   }
-  //   console.log(data);
-  //   this.note.ColorNote(data).subscribe(
-  //     (response:any)=>{ 
-  //       console.log('Response of setColour',response);
-  //       this.snackBar.open('Change the color successfully','',{duration:2000,})
-  //     },
-  //     (error:any) => {
-  //       this.snackBar.open('Color not change','try Again',{duration:2000,})
-  //     }
-  //     );
-  //  }
-
-
 
 
 }

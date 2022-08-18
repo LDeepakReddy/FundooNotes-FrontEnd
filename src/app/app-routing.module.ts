@@ -11,6 +11,7 @@ import { UpdateComponent } from './Components/update/update.component';
 import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.component';
 import { TrashnotesComponent } from './Components/trashnotes/trashnotes.component';
 import { CreatelabelComponent } from './Components/createlabel/createlabel.component';
+import {AuthguardGuard} from '../app/authguard.guard'
 
 const routes: Routes = [
   { path:'', redirectTo:"/login", pathMatch:'full' },
@@ -19,13 +20,14 @@ const routes: Routes = [
   { path: 'resetPassword/:token', component: ResetPasswordComponent},
   {path: 'forgot-email', component:ForgotEmailComponent},
  
-  {path: 'dashboard', component:DashboardComponent,
+  {path: 'dashboard', component:DashboardComponent,canActivate:[AuthguardGuard],
 
   children:[
     { path:'', redirectTo:"/dashboard/getallnotes", pathMatch:'full' },
     { path:'getallnotes',component:GetallnotesComponent},
     { path:'archiveNotes',component:ArchivenotesComponent},  
     { path:'trash',component:TrashnotesComponent},
+    
     // {path: 'labels',component:CreatelabelComponent},
     
   

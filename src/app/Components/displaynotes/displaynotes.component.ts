@@ -37,7 +37,8 @@ export class DisplaynotesComponent implements OnInit {
     this.subscription = this.dataService.searchNote.subscribe(message => {
       this.message = message;
       console.log( message.data[0]);
-      this.searchString = message.data[0]
+      this.searchString = message.data[0];
+      
     })
 
   }

@@ -17,6 +17,7 @@ export class GetallnotesComponent implements OnInit {
   ngOnInit(): void {
     this.subscription = this.dataService.currentMessage.subscribe(message => {
       this.message = message;
+     
       this.getAllNotes();
     })
     this.getAllNotes();

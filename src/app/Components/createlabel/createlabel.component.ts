@@ -64,34 +64,14 @@ export class CreatelabelComponent implements OnInit {
       })
   }
 
-  //delete
-  // deleteNoteLabel(labelList: any) {
-  //   // this.show = true;
-  //   console.log("Delete Labels");
-
-  //   let data = {
-  //     labelList: labelList,
-  //     isDeleted: false,
-  //     // userId:localStorage.getItem('userId')
-  //   }
-  //   console.log("delete label", data);
-  //   this.labelService.deleteLabel(data).subscribe((response: any) => {
-
-  //     this.matSnackBar.open('label deleted', '', { duration: 2000, })
-  //   }),
-  //     (error: any) => {
-  //       console.log(error);
-  //       this.matSnackBar.open('label not deleted', '', { duration: 2000, })
-  //     }
-
-  // }
+  
 
   
   deleteNoteLabel(labelList: any) {
     this.labelService.deleteLabel(labelList.id).subscribe((response: any) => {
-      console.log("Note Deleted Successfully", response);
+      console.log("Label Deleted Successfully", response);
     
-      this.matSnackBar.open('Note deleted successfully!!!', '', {
+      this.matSnackBar.open('Label deleted successfully', '', {
         duration: 3000,
         verticalPosition: 'bottom',
         horizontalPosition: 'left'
@@ -99,42 +79,26 @@ export class CreatelabelComponent implements OnInit {
     })
   }
 
-  updateLabel(labeldata: any) {
-    // this.show = true;
-    console.log("update Labels");
+  
+  updateLabel(labelList: any) {
 
-    let data = {
-      // labelList:labelList,
-      // isDeleted: false,
-      // id: labeldata.id,
-      updated_label: labeldata.label,
-      userId: localStorage.getItem('userId')
+    let noteUpdate = {
+      id: labelList.id,
+      updated_label: labelList.label_name,
+   
     }
-    console.log("update data", data);
-    this.labelService.updateLabel(data).subscribe((response: any) => {
 
-      this.matSnackBar.open('label updated', '', { duration: 2000, })
-    }),
-      (error: any) => {
-        console.log(error);
-        this.matSnackBar.open('label not updated', '', { duration: 2000, })
-      }
-
+    this.labelService.updateLabel(noteUpdate).subscribe((response: any) => {
+      console.log(response)
+      this.matSnackBar.open('Label updated', '', {
+        duration: 3000,
+        verticalPosition: 'bottom',
+        horizontalPosition: 'left'
+      })
+    })
+  
   }
-  // updateLabel(labeldata: any) {
 
-  //   let data = {
-  //     // this noteId, title,description is coming from backend API
-  //     id: labeldata.id,
-  //     labelname: labeldata.label,
-     
-  //   }
-
-  //   this.labelService.updateLabel(data).subscribe((response: any) => {
-  //     console.log(response)
-  //   })
-    
-  // }
 
 
 
